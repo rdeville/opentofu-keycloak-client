@@ -1,6 +1,22 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.1.0 (2026-02-17)
+
+### ✨ Minor
+
+  * ✨ Add deployment of oidc client with default and optional scopes (!1) by Romain Deville ([`a2ba4ee`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/a2ba4eedaa4025ac242c1b7844074fedd4c056d7))
+  * ✨ Add deployment of openid client with optional and default scopes by Romain Deville ([`2051ce8`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/2051ce8db1c8094d90a327d51879dd76b250ae75)) 🔏
+  * ✨ Add provider constraint in versions.tf by Romain Deville ([`100d774`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/100d774e2ecbc2543d13ea4dde684a7733b79c21)) 🔏
+
+### 🩹 Patch
+
+  * 🔧(pre-commit): Remove terraform-docs from pre-commit by Romain Deville ([`bbf89f3`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/bbf89f3b61ade87a6575ffe37569aed2842e8d9b)) 🔏
+
+### 🔊 Others
+
+  * 📝 Update README with tf-docs and new examples by Romain Deville ([`1b2bec3`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/1b2bec359f760f7879e9560b456bd98a71b0393e)) 🔏
+
 ## v0.0.1 (2026-02-06)
 
 ### 🩹 Patch
