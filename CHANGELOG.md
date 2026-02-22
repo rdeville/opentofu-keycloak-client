@@ -1,6 +1,17 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.2.0 (2026-02-22)
+
+### ✨ Minor
+
+  * ✨ Add support of realm roles attachment to client (!2) by Romain Deville ([`a4e6806`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/a4e680634bd579c7e1fe1bedc74a91b98fa575d1))
+  * ✨ Add support of realm roles attachment to client by Romain Deville ([`fa30594`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/fa305940676b8af61cd2a54c2aa1d7dc80e1cc02)) 🔏
+
+### 🔊 Others
+
+  * 📝 Update README with tf-docs and new examples by Romain Deville ([`313b6b4`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/313b6b4ec27f813d1deb25b5d5e5d36067a24fbe)) 🔏
+
 ## v0.1.0 (2026-02-17)
 
 ### ✨ Minor
