@@ -159,6 +159,29 @@ module "keycloak_client" {
 }
 ```
 
+### Realm Roles
+
+Deploy an OpenID client with realm roles assigned to its service account:
+
+```hcl
+module "keycloak_client" {
+  source = "git::https://framagit.org/rdeville-public/opentofu/keycloak-client.git"
+
+  # Required variables
+  realm_id  = "my-realm"
+  client_id = "my-client"
+
+  # Enable service accounts to assign realm roles
+  service_accounts_enabled = true
+
+  # Assign realm roles to the service account
+  realm_roles = [
+    "my-realm-role-1",
+    "my-realm-role-2",
+  ]
+}
+```
+
 <!-- BEGIN TF-DOCS -->
 ## ⚙️ Module Content
 
@@ -188,6 +211,8 @@ module "keycloak_client" {
   > Client default scopes configuration
 * [resource.keycloak_openid_client_optional_scopes.this](https://registry.terraform.io/providers/keycloak/keycloak/latest/docs/resources/openid_client_optional_scopes)
   > Client optional scopes configuration
+* [resource.keycloak_openid_client_service_account_realm_role.this](https://registry.terraform.io/providers/keycloak/keycloak/latest/docs/resources/openid_client_service_account_realm_role)
+  >
 
 <!-- markdownlint-capture -->
 ### Inputs
@@ -283,6 +308,7 @@ string
 * [import](#import)
 * [default_scopes](#default_scopes)
 * [optional_scopes](#optional_scopes)
+* [realm_roles](#realm_roles)
 
 
 ##### `enabled`
@@ -1608,6 +1634,32 @@ An array of client scope names to attach to this client as optional scopes.
 
   ```hcl
   list(string)
+  ```
+
+  </div>
+  <div style="width:34%;float:right;">
+  <p style="border-bottom: 1px solid #333333;">Default</p>
+
+  ```hcl
+  []
+  ```
+
+  </div>
+</details>
+
+##### `realm_roles`
+
+A set of realm role names to assign to the service account user of this client.
+This is applicable only when service_accounts_enabled is true.
+
+<details style="width: 100%;display: inline-block">
+  <summary>Type & Default</summary>
+  <div style="height: 1em"></div>
+  <div style="width:64%; float:left;">
+  <p style="border-bottom: 1px solid #333333;">Type</p>
+
+  ```hcl
+  set(string)
   ```
 
   </div>
