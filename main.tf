@@ -72,3 +72,11 @@ resource "keycloak_openid_client_default_scopes" "this" {
   client_id      = keycloak_openid_client.this.id
   default_scopes = var.default_scopes
 }
+
+resource "keycloak_openid_client_service_account_realm_role" "this" {
+  for_each = var.service_accounts_enabled ? var.realm_roles : []
+
+  realm_id                = var.realm_id
+  service_account_user_id = keycloak_openid_client.this.service_account_user_id
+  role                    = each.key
+}

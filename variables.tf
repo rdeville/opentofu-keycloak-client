@@ -559,3 +559,15 @@ variable "optional_scopes" {
 
   default = []
 }
+
+variable "realm_roles" {
+  type        = set(string)
+  description = <<-EOM
+  A set of realm role names to assign to the service account user of this client.
+  This is applicable only when service_accounts_enabled is true.
+  EOM
+
+  nullable = false
+  default  = []
+
+}
