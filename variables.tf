@@ -55,7 +55,8 @@ variable "access_type" {
     will only allow bearer token requests.
   EOM
 
-  default = "CONFIDENTIAL"
+  nullable = false
+  default  = "CONFIDENTIAL"
 }
 
 variable "client_secret" {
@@ -164,7 +165,8 @@ variable "service_accounts_enabled" {
   client.
   EOM
 
-  default = false
+  nullable = false
+  default  = false
 }
 
 variable "frontchannel_logout_enabled" {
@@ -569,5 +571,26 @@ variable "realm_roles" {
 
   nullable = false
   default  = []
+
+}
+
+variable "client_roles" {
+  type = map(object({
+    # Key is the name of the role
+    activated   = optional(bool, true)
+    description = optional(string)
+  }))
+
+  description = <<-EOM
+  A map of object, to create client role this client, along with their
+  configuration.
+  Object key is the name of the role, and has the following attributes:
+  * `activated`: Optional, boolean, whether the role is attached to the service
+  account or not. This is applicable only when service_accounts_enabled is true.
+  * `description`: Optional, string, the description of the role.
+  EOM
+
+  nullable = false
+  default  = {}
 
 }

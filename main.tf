@@ -61,6 +61,8 @@ resource "keycloak_openid_client" "this" {
 
 # Client optional scopes configuration
 resource "keycloak_openid_client_optional_scopes" "this" {
+  count = var.access_type != "BEARER-ONLY" ? 1 : 0
+
   realm_id        = var.realm_id
   client_id       = keycloak_openid_client.this.id
   optional_scopes = var.optional_scopes
@@ -68,6 +70,8 @@ resource "keycloak_openid_client_optional_scopes" "this" {
 
 # Client default scopes configuration
 resource "keycloak_openid_client_default_scopes" "this" {
+  count = var.access_type != "BEARER-ONLY" ? 1 : 0
+
   realm_id       = var.realm_id
   client_id      = keycloak_openid_client.this.id
   default_scopes = var.default_scopes
@@ -79,4 +83,13 @@ resource "keycloak_openid_client_service_account_realm_role" "this" {
   realm_id                = var.realm_id
   service_account_user_id = keycloak_openid_client.this.service_account_user_id
   role                    = each.key
+}
+
+resource "keycloak_role" "this" {
+  for_each = var.client_roles
+
+  realm_id    = var.realm_id
+  client_id   = keycloak_openid_client.this.id
+  name        = each.key
+  description = each.value.description
 }
