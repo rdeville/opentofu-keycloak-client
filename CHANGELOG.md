@@ -1,6 +1,17 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.3.0 (2026-02-25)
+
+### ✨ Minor
+
+  * ✨ Add support for client roles and conditional scopes (!3) by Romain Deville ([`152d9fb`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/152d9fbbf7aa27171d94875dc27c3941fc57a008))
+  * ✨ Add support for client roles and conditional scopes by Romain Deville ([`17cd6db`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/17cd6db7b2ed22fee6fbb2797463759773248a70)) 🔏
+
+### 🔊 Others
+
+  * 📝 Update README with tf-docs and new examples by Romain Deville ([`67e0a58`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/67e0a586fe22899baf4d5f1ff0900d67da87c69c)) 🔏
+
 ## v0.2.0 (2026-02-22)
 
 ### ✨ Minor
