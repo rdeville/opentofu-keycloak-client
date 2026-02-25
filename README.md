@@ -182,6 +182,35 @@ module "keycloak_client" {
 }
 ```
 
+### Client Roles
+
+Deploy an OpenID client with client roles created for this client and optionally assigned to its service account:
+
+```hcl
+module "keycloak_client" {
+  source = "git::https://framagit.org/rdeville-public/opentofu/keycloak-client.git"
+
+  # Required variables
+  realm_id  = "my-realm"
+  client_id = "my-client"
+
+  # Enable service accounts to assign client roles
+  service_accounts_enabled = true
+
+  # Create client roles for this client and optionally assign them to the service account
+  client_roles = {
+    "my-client-role-1" = {
+      description = "Description for client role 1"
+      activated   = true
+    }
+    "my-client-role-2" = {
+      description = "Description for client role 2"
+      activated   = false
+    }
+  }
+}
+```
+
 <!-- BEGIN TF-DOCS -->
 ## ⚙️ Module Content
 
@@ -212,6 +241,8 @@ module "keycloak_client" {
 * [resource.keycloak_openid_client_optional_scopes.this](https://registry.terraform.io/providers/keycloak/keycloak/latest/docs/resources/openid_client_optional_scopes)
   > Client optional scopes configuration
 * [resource.keycloak_openid_client_service_account_realm_role.this](https://registry.terraform.io/providers/keycloak/keycloak/latest/docs/resources/openid_client_service_account_realm_role)
+  >
+* [resource.keycloak_role.this](https://registry.terraform.io/providers/keycloak/keycloak/latest/docs/resources/role)
   >
 
 <!-- markdownlint-capture -->
@@ -309,6 +340,7 @@ string
 * [default_scopes](#default_scopes)
 * [optional_scopes](#optional_scopes)
 * [realm_roles](#realm_roles)
+* [client_roles](#client_roles)
 
 
 ##### `enabled`
@@ -1672,11 +1704,47 @@ This is applicable only when service_accounts_enabled is true.
 
   </div>
 </details>
+
+##### `client_roles`
+
+A map of object, to create client role this client, along with their
+configuration.
+Object key is the name of the role, and has the following attributes:
+* `activated`: Optional, boolean, whether the role is attached to the service
+account or not. This is applicable only when service_accounts_enabled is true.
+* `description`: Optional, string, the description of the role.
+
+<details style="width: 100%;display: inline-block">
+  <summary>Type & Default</summary>
+  <div style="height: 1em"></div>
+  <div style="width:64%; float:left;">
+  <p style="border-bottom: 1px solid #333333;">Type</p>
+
+  ```hcl
+  map(object({
+    # Key is the name of the role
+    activated   = optional(bool, true)
+    description = optional(string)
+  }))
+  ```
+
+  </div>
+  <div style="width:34%;float:right;">
+  <p style="border-bottom: 1px solid #333333;">Default</p>
+
+  ```hcl
+  {}
+  ```
+
+  </div>
+</details>
 <!-- markdownlint-restore -->
 
 ### Outputs
 
 * `this`:
+  ID of the deployed client
+* `client_roles`:
   ID of the deployed client
 
 </details>
