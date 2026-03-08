@@ -104,7 +104,7 @@ variable "client_secret_regenerate_when_changed" {
   client_secret_wo_version attribute and can't be used together
   EOM
 
-  default = {}
+  default = null
 }
 
 variable "client_authenticator_type" {
