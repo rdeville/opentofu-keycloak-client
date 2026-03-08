@@ -556,7 +556,7 @@ client_secret_wo_version attribute and can't be used together
   <p style="border-bottom: 1px solid #333333;">Default</p>
 
   ```hcl
-  {}
+  null
   ```
 
   </div>
