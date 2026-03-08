@@ -1,6 +1,17 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.3.1 (2026-03-08)
+
+### 🩹 Patch
+
+  * 🐛 Update default value to null for var client_secret_regenerate_when_changed (!4) by Romain Deville ([`7177277`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/7177277bc5eb00ba5c031bd2c3e010458c3c9fe1))
+  * 🐛 Update default value to null for var client_secret_regenerate_when_changed by Romain Deville ([`652881e`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/652881ecd02d70364e460132ec3185fb3f495585)) 🔏
+
+### 🔊 Others
+
+  * 📝 Update README with tf-docs by Romain Deville ([`187058c`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/187058ccc1962beabfa340867a145d7bca29d06d)) 🔏
+
 ## v0.3.0 (2026-02-25)
 
 ### ✨ Minor
