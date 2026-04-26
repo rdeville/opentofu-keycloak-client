@@ -1,6 +1,13 @@
 <!-- markdownlint-disable-file -->
 # CHANGELOG
 
+## v0.4.0 (2026-04-26)
+
+### ✨ Minor
+
+  * ✨ Make variable client_secret_wo accept ephemeral value (!5) by Romain Deville ([`43837c3`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/43837c34844c4983bb82a93154d770881660b8f4))
+  * ✨ Make variable client_secret_wo accept ephemeral value by Romain Deville ([`6d2cc27`](https://framagit.org/rdeville-public/opentofu/keycloak-client/-/commit/6d2cc27df9c3665ff75802a26674b9ec446f32c4)) 🔏
+
 ## v0.3.1 (2026-03-08)
 
 ### 🩹 Patch
