@@ -80,6 +80,7 @@ variable "client_secret_wo" {
   EOM
 
   sensitive = true
+  ephemeral = true
   default   = null
 }
 
